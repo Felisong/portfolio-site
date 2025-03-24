@@ -1,7 +1,6 @@
 "use client";
+import { Skills } from "@/types";
 import { useEffect, useState } from "react";
-import type { Skills } from "../../shared/types/types";
-import { v4 as uuidv4 } from "uuid";
 
 export default function Home() {
   const [skills, setSkills] = useState<Skills[]>([]);
@@ -26,18 +25,6 @@ export default function Home() {
     }
   }
 
-  const DisplaySkills = skills.map((skill: Skills) => {
-    if (loading) {
-      return <p>loading</p>;
-    }
-    return (
-      <div key={uuidv4()}>
-        <h1>{skill.skill}</h1>
-        <p>{skill.category}</p>
-      </div>
-    );
-  });
-
   useEffect(() => {
     getSkills();
   }, []);
@@ -46,10 +33,30 @@ export default function Home() {
     console.log(skills);
   }, [skills]);
 
+  // tsx elements
+  const DisplaySkills = skills.map((skill: Skills) => {
+    console.log(skill._id);
+    return (
+      <div key={skill._id}>
+        <h1>{skill.skill}</h1>
+        <p>{skill.category}</p>
+      </div>
+    );
+  });
+  const LoadingElement = () => {
+    if (loading) {
+      return <p>Loading...</p>;
+    } else if (!loading && skills.length === 0) {
+      return <p>No skills found.</p>;
+    } else {
+      return DisplaySkills;
+    }
+  };
+
   return (
     <div className="">
       <p>hello!</p>
-      {DisplaySkills}
+      <LoadingElement />
     </div>
   );
 }
