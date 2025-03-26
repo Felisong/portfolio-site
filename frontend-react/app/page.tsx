@@ -1,7 +1,10 @@
 "use client";
 import { Skills } from "@/types";
 import { useEffect, useState } from "react";
-
+const baseURL =
+  process.env.NODE_ENV === "development"
+    ? process.env.NEXT_PUBLIC_BASE_URL_LOCAL
+    : process.env.NEXT_PUBLIC_BASE_URL_PROD;
 export default function Home() {
   const [skills, setSkills] = useState<Skills[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -9,7 +12,7 @@ export default function Home() {
   // Function to fetch skills
   async function getSkills() {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/skills`);
+      const res = await fetch(`${baseURL}/skills`);
 
       if (!res.ok) {
         throw new Error("Unable to fetch skills.");
