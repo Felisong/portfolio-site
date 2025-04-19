@@ -4,7 +4,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx ts-node src/server.ts"
+    "dev": "npx ts-node src/dev.ts",
+    "build": "tsc --project tsconfig.json",
+    "vercel-build": "npm run build",
+    "start": "node dist/server.js"
+  },
+  "engines": {
+    "node": "20.x"
   },
   "keywords": [],
   "author": "",

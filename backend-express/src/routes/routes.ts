@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import Skills from "../models/skillsModel";
+import mongoose from "mongoose";
 
 const router = Router();
 
