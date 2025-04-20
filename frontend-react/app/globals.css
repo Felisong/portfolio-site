@@ -2,3 +2,20 @@
 
 @config "../tailwind.config.js";
 @import "tailwindcss";
+
+@layer base {
+  h1 {
+    @apply text-h1 font-header;
+  }
+
+  p {
+    @apply text-primary text-supplement-white;
+  }
+
+  a {
+    @apply text-primary-white;
+  }
+  a:hover {
+    @apply text-vibrant-red;
+  }
+}

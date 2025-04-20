@@ -3,6 +3,10 @@ export default {
   content: ["./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontSize: {
+        h1: ["2rem", { lineHeight: "1.1" }],
+        primary: ["1.3rem"],
+      },
       colors: {
         "vibrant-red": "#AE1B55",
         "planet-shadow-red": "#341620",
@@ -11,6 +15,7 @@ export default {
         "light-pink": "#FEBCD7",
         "dark-pink": "#95506B",
         "dark-blue": "#001A2E",
+        "supplement-white": "#D3C99A",
       },
       fontFamily: {
         header: ["Mitr", "sans-serif"],

@@ -1,29 +1,36 @@
 "use client";
 
+import { useEffect } from "react";
+import Hamburger from "./header-components/Hamburger";
+import NavList from "./header-components/NavList";
+import { usePathname } from "next/navigation";
+
 export default function NavigationBar() {
-  const NavigationSelect = [
-    { name: "Home", url: "" },
-    { name: "About Me", url: "/about-me" },
-    { name: "Prior Works", url: "/prior-works" },
-    { name: "Resume", url: "/resume" },
+  const currentPath = usePathname();
+
+  const navigationSelect = [
+    { name: "Home", url: "/", currentPage: currentPath === "/" },
+    {
+      name: "About Me",
+      url: "/about-me",
+      currentPage: currentPath === "/about-me",
+    },
+    {
+      name: "Prior Works",
+      url: "/prior-works",
+      currentPage: currentPath === "/prior-works",
+    },
+    { name: "Resume", url: "/resume", currentPage: currentPath === "/resume" },
   ];
 
-  function NavList() {
-    return (
-      <>
-        {NavigationSelect.map((listItem: { name: string; url: string }) => (
-          <li className="mx-8 text-xl" key={listItem.name}>
-            <a href={listItem.url}>{listItem.name}</a>
-          </li>
-        ))}
-      </>
-    );
-  }
   return (
-    <header className="bg-vibrant-red p-8 font-header">
-      <ul className="flex">
-        <NavList></NavList>
+    <header className="bg-vibrant-red px-10 py-3 h-fi font-header">
+      <ul className="hidden md:flex justify-start">
+        <NavList navigationSelect={navigationSelect}></NavList>
       </ul>
+      <div className="flex justify-end md:hidden">
+        <Hamburger navigationSelect={navigationSelect}></Hamburger>
+      </div>
     </header>
   );
 }

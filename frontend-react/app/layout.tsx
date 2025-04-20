@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavigationBar from "./components/header/NavigationBar";
+// here i would fetch if the user is signed in if they are
 
 export const metadata: Metadata = {
   title: "Create Next App",
