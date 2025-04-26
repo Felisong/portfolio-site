@@ -5,6 +5,6 @@ export interface Skills {
   skill: string;
   category: string;
   logo_alt: string;
-  logo_url: string;
+  logo_svg: string;
   url: string;
 }

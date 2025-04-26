@@ -1,10 +1,19 @@
 "use client";
 
+import useSkills from "@/app/hook/useSkills";
+import SkillsCarousel from "../skills/SkillsCarousel";
+
 export default function HomeSkillsSection() {
+  const { skills, loading } = useSkills();
+  console.log(loading);
+
   return (
     <main className="text-center">
       <h1>My Skills</h1>
-      <p>content on top with z axis while I will make into a component</p>
+      <div className="max-w-full">
+        <SkillsCarousel skills={skills} />
+      </div>
+
       <p>svg here as an absolute behind</p>
     </main>
   );

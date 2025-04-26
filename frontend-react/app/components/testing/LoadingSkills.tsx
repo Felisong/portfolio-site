@@ -47,20 +47,4 @@ export default function LoadingSkills() {
       </div>
     );
   });
-  const LoadingElement = () => {
-    if (loading) {
-      return <p>Loading...</p>;
-    } else if (!loading && skills.length === 0) {
-      return <p>No skills found.</p>;
-    } else {
-      return DisplaySkills;
-    }
-  };
-
-  return (
-    <div className=" text-blue-950">
-      <p className="font-header">hello!</p>
-      <LoadingElement />
-    </div>
-  );
 }
