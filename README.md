@@ -22,6 +22,8 @@
 - [Google/ Google Fonts](https://google.com/)
 - [Icons8](https://icons8.com/)
 - [supabase svg](https://supabase.com/brand-assets)
+- [vercel svg](https://vercel.com/home)
+- [my own hands on some svgs](https://www.figma.com/design/fnB0MagUJiyoY1ApDZoh4b/Untitled?node-id=0-1&t=nkDULYJHXdkImll6-1)
 - [StackOverflow](https://stackoverflow.com/)
 - [this Reddit Post](https://www.reddit.com/r/tailwindcss/comments/1jwtg4y/are_people_shifting_to_tailwindcss_v4/)
   had issues with v4 tailwind that a comment here helped with.

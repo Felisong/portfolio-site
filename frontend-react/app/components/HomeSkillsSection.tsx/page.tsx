@@ -5,12 +5,11 @@ import SkillsCarousel from "../skills/SkillsCarousel";
 
 export default function HomeSkillsSection() {
   const { skills, loading } = useSkills();
-  console.log(loading);
 
   return (
     <main className="text-center">
       <h1>My Skills</h1>
-      <div className="max-w-full">
+      <div className="max-w-full ">
         <SkillsCarousel skills={skills} />
       </div>
 
