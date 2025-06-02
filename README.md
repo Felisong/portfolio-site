@@ -33,8 +33,6 @@
 - [DeepSeek](https://chat.deepseek.com/)
 - [claude](https://claude.ai/)
 - [chatgpt](https://chatgpt.com/)
-
-Used for understanding pieces and what they were used for. Educating me on how to use something in concepts.
-
+  for coding help on understanding how things worked.
 - [perplexity](https://www.perplexity.ai)
   I was fact checking certain sources with perplexity as I believe it is a better fir information off the internet. Returns the sources that then I can sift through myself.

@@ -6,6 +6,7 @@ export default function SkillsCarousel({ skills }: { skills: Skills[] }) {
   const [displaySkillsArr, setDisplaySkillsArr] = useState<Skills[][]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [currentSlide, setCurrentSlide] = useState(0);
+  // rounds up for dividernum
   const dividerNum = Math.ceil(skills.length / 3);
   useEffect(() => {
     // where im putting the pieces
@@ -14,7 +15,7 @@ export default function SkillsCarousel({ skills }: { skills: Skills[] }) {
     let section: Skills[] = [];
 
     skills.forEach((skill, index) => {
-      section.push(skill); // always add the skill first
+      section.push(skill);
 
       const isLastItem = index === skills.length - 1;
       const shouldSplit = (index + 1) % dividerNum === 0;

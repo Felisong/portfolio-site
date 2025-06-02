@@ -9,8 +9,11 @@ export default function HomeSkillsSection() {
   return (
     <main className="text-center">
       <h1>My Skills</h1>
-      <div className="max-w-full ">
-        <SkillsCarousel skills={skills} />
+      <div className="max-w-full relative h-fit">
+        <div className="z-10">
+          <SkillsCarousel skills={skills} />
+        </div>
+        <div className="bg"></div>
       </div>
 
       <p>svg here as an absolute behind</p>
