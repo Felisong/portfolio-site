@@ -8,15 +8,21 @@ const baseURL =
 
 export default function useSkills() {
   const [skills, setSkills] = useState<Skills[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     async function getSkills() {
       try {
         const res = await fetch(`${baseURL}/skills`);
         if (!res.ok) throw new Error("Unable to fetch skills.");
-        const data = await res.json();
-        setSkills(data.skills);
+        const data: {
+          skills?: Skills[];
+          status: number;
+          message: string;
+        } = await res.json();
+        if (data.skills) {
+          setSkills(data.skills);
+        }
       } catch (err) {
         console.error("Fetch error:", err);
         setSkills([]);
@@ -26,7 +32,7 @@ export default function useSkills() {
     }
 
     getSkills();
-  }, [baseURL]);
+  }, []);
 
   return { skills, loading };
 }

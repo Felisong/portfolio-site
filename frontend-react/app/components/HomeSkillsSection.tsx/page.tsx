@@ -1,11 +1,9 @@
 "use client";
-
 import useSkills from "@/app/hook/useSkills";
 import SkillsCarousel from "../skills/SkillsCarousel";
 
 export default function HomeSkillsSection() {
-  const { skills, loading } = useSkills();
-
+  const { skills } = useSkills();
   return (
     <main className="text-center">
       <h1>My Skills</h1>

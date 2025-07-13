@@ -1,6 +1,4 @@
 "use client";
-
-import { useEffect } from "react";
 import Hamburger from "./header-components/Hamburger";
 import NavList from "./header-components/NavList";
 import { usePathname } from "next/navigation";

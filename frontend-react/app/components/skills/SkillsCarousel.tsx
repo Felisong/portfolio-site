@@ -5,10 +5,16 @@ import { useEffect, useState } from "react";
 export default function SkillsCarousel({ skills }: { skills: Skills[] }) {
   const [displaySkillsArr, setDisplaySkillsArr] = useState<Skills[][]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [fetchedSkills, setFetchedSkills] = useState<boolean>(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   // rounds up for dividernum
   const dividerNum = Math.ceil(skills.length / 3);
   useEffect(() => {
+    if (skills.length === 0) {
+      setFetchedSkills(true);
+      return;
+    }
+    setFetchedSkills(true);
     // where im putting the pieces
     const result: Skills[][] = [];
     // where each piece will go.
@@ -33,10 +39,17 @@ export default function SkillsCarousel({ skills }: { skills: Skills[] }) {
     <div className="relative mt-8">
       {loading ? (
         <p>Loading</p>
+      ) : !fetchedSkills ? (
+        <div>
+          <p>
+            skills successfully fetched, but no data to display, please try to
+            refresh!
+          </p>
+        </div>
       ) : (
         <div className="relative w-5/6 mx-auto overflow-hidden">
           <div className="flex transition-transform duration-300 ease-in-out">
-            {displaySkillsArr.map((skillSection: Skills[], index) => (
+            {displaySkillsArr.map((skillSection: Skills[]) => (
               <div
                 key={skillSection[0]._id}
                 className="grid grid-cols-2 flex-shrink-0 w-full"
