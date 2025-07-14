@@ -28,10 +28,10 @@ router.get("/skills", async (req: Request, res: Response) => {
   }
 });
 
-router.get("/prior-work", async (req: Request, res: Response) => {
+router.get("/prior-works", async (req: Request, res: Response) => {
   try {
     console.log(`I am getting pinged!`);
-    const priorWorks = await PriorWorks.find();
+    const priorWorks = await PriorWorks.find().populate("skills");
     console.log(`hello?: `, priorWorks);
     if (priorWorks.length > 0) {
       res.status(200).json({

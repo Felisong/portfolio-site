@@ -13,8 +13,8 @@ export default function useWorks() {
   useEffect(() => {
     async function getWorks() {
       try {
-        const res = await fetch(`${baseURL}/priorWorks`);
-        if (!res.ok) throw new Error("Unable to fetch skills.");
+        const res = await fetch(`${baseURL}/prior-works`);
+        if (!res.ok) throw new Error("Unable to fetch works.");
         const data: {
           priorWorks?: PriorWorksModel[];
           status: number;
@@ -25,13 +25,11 @@ export default function useWorks() {
         }
       } catch (err) {
         console.error("Fetch error:", err);
-        setWorks([]);
       } finally {
         setLoading(false);
       }
     }
     getWorks();
   }, []);
-
   return { works, loading };
 }

@@ -1,20 +1,26 @@
 "use client";
 
+import Link from "next/link";
 import HeroSection from "./components/hero/HeroSection";
-import HomeSkillsSection from "./components/HomeSkillsSection.tsx/page";
+import HomeSection from "./components/home-section/HomeSection";
+import useWorks from "./hook/useWorks";
 
 export default function Home() {
+  const { works, loading } = useWorks();
   return (
     <div>
       <HeroSection></HeroSection>
-      <HomeSkillsSection></HomeSkillsSection>
-      <a target="_blank" href="https://icons8.com/icon/cHBUT9SmrD2V/typescript">
+      <HomeSection works={works} loading={loading}></HomeSection>
+      <Link
+        target="_blank"
+        href="https://icons8.com/icon/cHBUT9SmrD2V/typescript"
+      >
         TypeScript
-      </a>{" "}
+      </Link>{" "}
       icon by{" "}
-      <a target="_blank" href="https://icons8.com">
+      <Link target="_blank" href="https://icons8.com">
         Icons8
-      </a>
+      </Link>
     </div>
   );
 }

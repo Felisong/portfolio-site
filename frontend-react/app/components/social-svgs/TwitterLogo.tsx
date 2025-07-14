@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function TwitterLogo({
   width = "40",
   height = "40",
@@ -10,7 +12,7 @@ export default function TwitterLogo({
   className?: string;
 }) {
   return (
-    <a href="https://x.com/jacobsheeps">
+    <Link href="https://x.com/jacobsheeps">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={width}
@@ -30,6 +32,6 @@ export default function TwitterLogo({
           transform="scale(5.12)"
         />
       </svg>
-    </a>
+    </Link>
   );
 }

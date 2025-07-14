@@ -1,7 +1,6 @@
 // shared types
 
 export interface Skills {
-  _id: string;
   skill: string;
   category: string;
   logo_alt: string;
@@ -9,16 +8,17 @@ export interface Skills {
   url: string;
 }
 export interface PriorWorksModel {
-  title: String;
-  image1: String;
-  gif: String;
-  description: String;
-  deployedUrl: String;
-  githubFront: String;
-  githubBack: String;
-  timeframe: String;
+  title: string;
+  image1: string;
+  gif: string;
+  description: string;
+  deployedUrl: string;
+  githubFront: string;
+  githubBack: string;
+  timeframe: string;
   willReturnTo: Boolean;
   complete: Boolean;
   skills: Skills[];
-  figmaLinks: String[];
+  figmaLinks: string[];
+  alt: string;
 }

@@ -1,4 +1,7 @@
 "use client";
+
+import Link from "next/link";
+
 export default function LinkedInLogo({
   width = "40",
   height = "40",
@@ -9,7 +12,7 @@ export default function LinkedInLogo({
   className?: string;
 }) {
   return (
-    <a href="wwww.linkedin.com/in/carolina-henriquez-silva">
+    <Link href="wwww.linkedin.com/in/carolina-henriquez-silva">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={width}
@@ -33,6 +36,6 @@ export default function LinkedInLogo({
           </g>
         </g>
       </svg>
-    </a>
+    </Link>
   );
 }

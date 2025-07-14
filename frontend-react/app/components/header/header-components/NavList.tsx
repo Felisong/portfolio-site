@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function NavList({
   navigationSelect,
 }: {
@@ -8,15 +10,15 @@ export default function NavList({
   return (
     <>
       {navigationSelect.map((listItem) => (
-        <li className="mx-8 text-xl" key={listItem.name}>
-          <a
+        <li className="mx-8 text-xl list-none" key={listItem.name}>
+          <Link
             className={`hover:text-bright-yellow ${
               listItem.currentPage ? "text-supplement-white" : ""
             }`}
             href={listItem.url}
           >
             {listItem.name}
-          </a>
+          </Link>
         </li>
       ))}
     </>

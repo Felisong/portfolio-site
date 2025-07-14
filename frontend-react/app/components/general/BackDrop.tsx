@@ -2,6 +2,7 @@
 import TwitterLogo from "../social-svgs/TwitterLogo";
 import LinkedInLogo from "../social-svgs/LinkedInLogo";
 import GitHubLogo from "../social-svgs/GitHubLogo";
+import Link from "next/link";
 
 export default function BackDrop() {
   return (
@@ -23,9 +24,9 @@ export default function BackDrop() {
             <TwitterLogo></TwitterLogo>
           </li>
         </ul>
-        <a className="absolute right-2 bottom-2" href="/about-me">
+        <Link className="absolute right-2 bottom-2" href="/about-me">
           {`More About Me >`}{" "}
-        </a>
+        </Link>
       </div>
     </div>
   );
