@@ -22,3 +22,18 @@ export interface PriorWorksModel {
   figmaLinks: string[];
   alt: string;
 }
+export type FormModel = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  contact_number: string;
+};
+export type messageModel = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  dateSent: date;
+  status: string;
+};

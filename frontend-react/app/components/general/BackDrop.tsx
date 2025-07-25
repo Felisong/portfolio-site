@@ -13,7 +13,7 @@ export default function BackDrop() {
           I am a woman with a love for web development and design. An aspiring
           Full Stack Developer.
         </p>
-        <ul className="flex justify-center m-2 mb-4">
+        <ul className="flex justify-center m-2 mb-4 list-none">
           <li className="mx-2">
             <LinkedInLogo></LinkedInLogo>
           </li>

@@ -16,6 +16,7 @@ export default {
         "dark-pink": "#95506B",
         "dark-blue": "#001A2E",
         "supplement-white": "#D3C99A",
+        "input-grey": "#D9D9D9",
       },
       fontFamily: {
         header: ["Mitr", "sans-serif"],

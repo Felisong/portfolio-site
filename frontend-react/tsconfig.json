@@ -28,7 +28,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "tailwind.config.js",
-    "app/components/home-section"
+    "app/components/home-section",
+    "./jest-setup.js",
+    "./babel.config.js"
   ],
   "exclude": ["node_modules"]
 }

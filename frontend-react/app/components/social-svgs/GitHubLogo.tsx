@@ -1,4 +1,7 @@
 "use client";
+
+import Link from "next/link";
+
 export default function GitHubLogo({
   width = "40",
   height = "40",
@@ -9,7 +12,7 @@ export default function GitHubLogo({
   className?: string;
 }) {
   return (
-    <a href="https://github.com/Felisong">
+    <Link href="https://github.com/Felisong">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={width}
@@ -29,6 +32,6 @@ export default function GitHubLogo({
           transform="scale(5.12)"
         ></path>
       </svg>
-    </a>
+    </Link>
   );
 }

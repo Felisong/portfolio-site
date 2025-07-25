@@ -1,6 +1,7 @@
 import { Skills } from "@/types";
 import DisplaySvg from "./DisplaySvg";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function SkillsCarousel({ skills }: { skills: Skills[] }) {
   const [displaySkillsArr, setDisplaySkillsArr] = useState<Skills[][]>([]);
@@ -56,7 +57,7 @@ export default function SkillsCarousel({ skills }: { skills: Skills[] }) {
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
                 {skillSection.map((skill: Skills) => (
-                  <a
+                  <Link
                     href={skill.url}
                     key={skill.skill}
                     className="m-2 transition-transform duration-300 hover:scale-110 hover:text-bright-yellow flex flex-col items-center"
@@ -71,7 +72,7 @@ export default function SkillsCarousel({ skills }: { skills: Skills[] }) {
                       className="hover:fill-bright-yellow"
                     />
                     <h2 className="mt-2 text-center">{skill.skill}</h2>
-                  </a>
+                  </Link>
                 ))}
               </div>
             ))}

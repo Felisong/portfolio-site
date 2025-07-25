@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavigationBar from "./components/header/NavigationBar";
+import Footer from "./components/footer/Footer";
+import { ToastProvider } from "./utils/context/toast/toastContext";
+import ToastWrapper from "./utils/context/toast/ToastWrapper";
 // here i would fetch if the user is signed in if they are
 
 export const metadata: Metadata = {
@@ -18,8 +21,12 @@ export default function RootLayout({
       <body
         className={`bg-dark-blue text-primary-white font-primary antialiased`}
       >
-        <NavigationBar></NavigationBar>
-        {children}
+        <ToastProvider>
+          <ToastWrapper />
+          <NavigationBar></NavigationBar>
+          {children}
+          <Footer />
+        </ToastProvider>
       </body>
     </html>
   );

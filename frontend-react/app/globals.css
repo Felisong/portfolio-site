@@ -24,4 +24,26 @@
   li {
     list-style: circle;
   }
+  label {
+    font-size: 1.2em;
+  }
+  input,
+  textarea {
+    @apply border-4 py-1 px-2 rounded-2xl border-dark-blue bg-input-grey text-dark-blue mb-1 min-w-full w-full;
+  }
+  textarea {
+    @apply min-h-44;
+  }
+  @media (min-width: 768px) {
+    input,
+    textarea {
+      @apply min-w-1/2;
+    }
+  }
+  @media (min-width: 1023px) {
+    input,
+    textarea {
+      @apply min-w-1/4;
+    }
+  }
 }
