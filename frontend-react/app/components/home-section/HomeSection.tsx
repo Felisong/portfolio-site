@@ -14,7 +14,7 @@ export default function HomeSection({
   const { skills } = useSkills();
   const filtered = works.filter(
     (work: PriorWorksModel) =>
-      work.title !== "Portfolio Site" && work.title !== "Travel Blog"
+      work.title !== "Portfolio Site" && work.title !== "Travel Blog" && work.title !== 'The Golden Wheat'
   );
   return (
     <main className="text-center">

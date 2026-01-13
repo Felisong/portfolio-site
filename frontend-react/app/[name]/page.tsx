@@ -58,11 +58,13 @@ export default function WorkDetailPage({
         src={currentWork.gif}
         alt={currentWork.alt}
       />
-
+     <div    className="p-4">
+       <a href={currentWork.deployedUrl}>Click here to view website</a>
       <p
-        className="p-4"
+     
         dangerouslySetInnerHTML={{ __html: currentWork.description }}
       ></p>
+     </div>
 
       <div className="md:col-span-2 mb-16 pb-4 px-4">
         <h1 className="font-header text-center mx-8 my-8 md:col-span-2">
